@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Code created by John Jerry Gordon-Mensah -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>John Jerry Gordon-Mensah</h1>
+    </header>
+    <!-- Code created by John Jerry Gordon-Mensah -->
+
+    <nav>
+        <a href="#intro">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#signup">Sign Up</a>
+    </nav>
+
+    <section id="intro">
+        <h2>Welcome to Our Website</h2>
+        <p>Form validation, responsive design, and a navigation menu Project 2.</p>
+    </section>
+
+    <section id="contact">
+        <h3>Contact Us</h3>
+        <form id="contactForm" action="/contact" method="post" onsubmit="return validateForm('contactForm')">
+            <label for="contactName">Your Name:</label>
+            <input type="text" id="contactName" name="contactName" required>
+            <!-- Code created by John Jerry Gordon-Mensah -->
+
+            <label for="contactEmail">Your Email:</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- Code created by John Jerry Gordon-Mensah -->
+
+    <section id="signup">
+        <h3>Sign Up</h3>
+        <form id="signupForm" action="/signup" method="post" onsubmit="return validateForm('signupForm')">
+            <label for="signupName">Your Name:</label>
+            <input type="text" id="signupName" name="signupName" required>
+
+            <label for="signupEmail">Your Email:</label>
+            <input type="email" id="signupEmail" name="signupEmail" required>
+
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="signupPassword" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+    <!-- Code created by John Jerry Gordon-Mensah -->
+
+
+    <script>
+        function validateForm(formId) {
+            var form = document.getElementById(formId);
+
+            for (var i = 0; i < form.elements.length; i++) {
+                if (form.elements[i].type !== "submit" && form.elements[i].value.trim() === "") {
+                    alert("Please fill in all fields.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+    <!-- Code created by John Jerry Gordon-Mensah -->
+
+
+</body>
+
+</html>
